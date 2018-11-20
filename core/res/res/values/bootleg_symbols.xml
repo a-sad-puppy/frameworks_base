@@ -66,4 +66,7 @@
 
     <!-- Whether Pixel props is enabled -->
     <java-symbol type="bool" name="config_enablePixelProps" />
+
+    <!-- System fonts -->
+    <java-symbol type="array" name="config_fontPackages" />
 </resources>
