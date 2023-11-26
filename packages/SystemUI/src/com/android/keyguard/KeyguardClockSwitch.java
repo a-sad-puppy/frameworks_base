@@ -65,8 +65,6 @@ public class KeyguardClockSwitch extends RelativeLayout {
     // In this case, the translation comes from KeyguardStatusView
     public int screenOffsetYPadding = 0;
 
-    private static final String FONT_FAMILY = "sans-serif";
-
     /** Returns a region for the large clock to position itself, based on the given parent. */
     public static Rect getLargeClockRegion(ViewGroup parent) {
         int largeClockTopMargin = parent.getResources()
@@ -198,7 +196,8 @@ public class KeyguardClockSwitch extends RelativeLayout {
     protected void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         if (mClock != null) {
-            Typeface tf = Typeface.create(FONT_FAMILY, Typeface.NORMAL);
+            Typeface tf = Typeface.create(mContext.getResources().getString(
+                    com.android.internal.R.string.config_clockFontFamily), Typeface.NORMAL);
             mClock.setTypeface(tf);
         }
     }
